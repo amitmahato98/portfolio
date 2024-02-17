@@ -5,20 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Mine</div>
-            <ul>
-                <li>HOME</li>
-                <li>ABOUT</li>
-                <li>SERVICE</li>
-                <li>WORK</li>
-                <li>BLOG</li>
-                <li>CONTACT</li>
+            <div class="logo">AMIT</div>
+            <div class="menu" id="toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+            <ul id="nav-menu" class="nav-menu">
+               <a href="#"> <li>HOME</li></a>
+               <a href="#"> <li>ABOUT</li></a>
+               <a href="#"> <li>SERVICES</li></a>
+                <a href="#"><li>WORK</li></a>
+               <a href="#"> <li>BLOG</li></a>
+               <a href="#"> <li>CONTACT</li></a>
             </ul>
         </nav>
+        <div class="hero">
+            <img src="img/1bgfull.jpeg" >
+            <span>
+                <h1>AMIT MAHATO</h1>
+                <p>UX/UI Designer</p>
+                <p>Front End Developer</p>
+                <p>I CODE COOL WEBSITES.</p>
+            </span>
+        </div>
     </header>
+    <main>
+        <div class="about">
+            <h1>ABOUT</h1>
+            <div class="html">
+                <h2>HTML</h2>
+                <p>HTML Mastery: I'm adept at crafting structured and semantically correct HTML code, ensuring that web content is not only visually appealing but also accessible to all users.</p>
+            </div>
+            <div class="css">
+                <h2>CSS</h2>
+                <p> CSS Expertise: My proficiency in CSS allows me to create captivating and responsive designs that enhance user experiences. Whether it's custom styling, animations, or cross-browser compatibility, I've got it covered.</p>
+            </div>
+            <div class="js">
+                <h2>JAVASCRIPT</h2>
+                <p>JavaScript Proficiency: JavaScript is where I add interactivity and dynamism to websites and applications. I specialize in building feature-rich web solutions and user-friendly interfaces using this versatile language.</p>
+            </div>
+        </div>
+        <div class="services">
+            <div>
+                <h1>SERVICES</h1>
+                <p>I specialize in developing</p>
+            </div>
+            <div class="card-services">
+                <div class="card">
+                    <img src="img/webdesign.png">
+                    <h2>WEBDESIGN</h2>
+                </div>
+                <div class="card">
+                    <img src="img/webdevelopment.png">
+                    <h2>FRONTEND DEVELOPER</h2>
+                    
+                </div>
+                <div class="card">
+                    <img src="img/webresponsive.png">
+                    <h2>RESPONSIVE DESIGN</h2>
+                    <p> I ensure that websites I create are fully responsive, adapting seamlessly to different screen sizes and devices.</p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script>
+        const togglebutton = document.getElementById('toggle');
+        let navmenu = document.getElementById('nav-menu')
+        togglebutton.addEventListener('click',() => {
+            navmenu.classList.toggle('active');
+        })
+    </script>
 </body>
 </html>

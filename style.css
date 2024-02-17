@@ -2,5 +2,158 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    list-style: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+}
+nav{
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    background-color: black;
+    color: white;
+}
+ul{
+    display: flex;
+    gap: 1.5rem;
+    
+}
+.menu{
+    display: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+ul li, .logo{
+    cursor: pointer;
+}
+.hero{
+    padding: 2rem 0;
+    background-color: rgb(7, 7, 7);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font: bolder;
+}
+img{
+    border-radius: 20px;
+    /* width: 30%; */
+}
+.hero span{
+    font-size: 2rem;
+
+}
+span p:last-child{
+    color: rgb(133, 46, 46);
+}
+.about{
+    padding: 3rem;
+    background-color: rgb(27, 27, 27);
+    color: rgb(182, 182, 182);
+}
+.about h1{
+    padding-bottom: 1rem;
+}
+.about h2{
+    padding: 1rem 0;
+}
+.about p{
+    padding-bottom: 2rem;
+}
+.html,.css,.js{
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgb(206, 205, 205), 0 3px 10px 0 rgba(189, 188, 188, 0.19); 
+}
+.services{
+    background-color: rgb(7, 7, 7);
+    color: white;
+    padding: 3rem 0;
+    
+}
+.card-services{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+
+}
+.services div:first-child{
+    text-align: center;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 2px 4px 0 rgb(206, 205, 205), 0 3px 10px 0 rgba(189, 188, 188, 0.19); 
+    height: 400px;
+    width: 30%;
+    background-color: rgb(58, 56, 56);
+}
+.card img{
+    width: 100px;
+    height: 100px;
+    border: 10px solid black;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (width < 600px){
+    nav{
+        padding:  2rem 0;
+    }
+    .menu{
+        display: block;
+        font-size: 2rem;
+        padding-right: 1rem;
+    }
+    .logo{
+        padding-left: 1rem;
+    }
+    .nav-menu{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 0;
+        height: 100vh;
+        top: 6.5rem;
+        background-color: rgb(182, 180, 180);
+        overflow: hidden;
+    }
+    li{
+        font-size: 2rem;
+        margin-top: 2.5rem;
+    }
+    .nav-menu.active{
+        left: 0;
+        width: 100%;       
+    }
+    .hero{
+        flex-direction: column;
+        row-gap: 5rem;
+    }
+    img{
+        width: 100%;
+    }
+
+
+
 }
