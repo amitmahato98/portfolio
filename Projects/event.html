@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Documentation Of Color</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        p{
+            display: flex;
+            justify-content: center;
+            align-items: self-start;
+            flex-direction: column;
+            cursor: pointer;
+            text-transform: capitalize;
+            /* border: 5px solid royalblue ; */
+            /* border-radius: 20px; */
+            /* background-color: #ff0000; */
+        }
+        button{
+            cursor: pointer;
+            border-radius: 5%;
+        }
+    </style>
+</head>
+<body>
+
+        <p id="time"></p>
+        <button onclick="clearInterval(clock)">Click to Stop time</button>
+
+    <h1>Demonstration of colors.</h1>
+<div>
+    <p onclick="bgwhite() ">white </p>
+    <p onclick="bgblack() ">black </p>
+    <p onclick="bggreen() ">green </p>
+    <p onclick="bgbrown() ">brown </p>
+    <p onclick="bgblue()  ">blue  </p>
+    <p onclick="bgpurple()">purple</p>
+    <p onclick="bgorange()">orange</p>
+    <p onclick="bgred()   ">red   </p>
+    <p onclick="bgyellow()">yellow</p>
+    <p onclick="bgviolet()">violet</p>
+    <p onclick="bgpink()  ">pink  </p>
+    <p onclick="bggrey()  ">grey  </p>
+    
+</div>
+
+
+
+<script>
+
+    var one = setTimeout(message,5000);
+    function message(){
+        alert("If you dont click the button -- Save Page -- in 20 seconds. Then, Your Page and Link and Data might be destroyed.");
+    }
+
+
+    var clock = setInterval(clocktiming,1000);
+
+        function clocktiming(){
+            let n = new Date();
+        var time = n.toLocaleTimeString();
+        document.getElementById('time').innerHTML = time;
+            // document.write('Time is: '+time);
+            // alert('It is only for stop the Time.')
+        }
+    
+    var d = new Date();
+    document.write('Today`s date is: '+d);
+    document.write("<br>")
+    document.write("<br>")
+    
+    var time = d.toLocaleTimeString()
+    document.write('Time is: '+time);
+    document.write("<br>")
+    document.write("<br>")
+    
+    var miti = d.toLocaleDateString()
+    document.write('Time is: '+miti);
+    document.write("<br>")
+    document.write("<br>")
+
+    var hour = d.getHours();
+    document.write('hour is: '+hour);
+    document.write("<br>")
+    
+    document.write("<br>")
+    var minutes = d.getMinutes();
+    document.write('minutes is: '+minutes);
+    document.write("<br>")
+    
+    document.write("<br>")
+    var seconds = d.getSeconds();
+    document.write('second is: '+seconds);
+    document.write("<br>")
+
+    document.write("<br>")
+    var getMilliseconds = d.getMilliseconds();
+    document.write('milisecond is: '+getMilliseconds);
+    document.write("<br>")
+    document.write("<br>")
+    
+
+
+
+
+
+    function bgblack(){
+        document.body.style.backgroundColor='black';
+        document.body.style.color='white'
+    }
+    function bggreen(){
+        document.body.style.backgroundColor='green';
+        document.body.style.color='black'
+    }
+    function bgbrown(){
+        document.body.style.backgroundColor='brown';
+        document.body.style.color='#f2f2f2'
+    }
+    function bgblue(){
+        document.body.style.backgroundColor='blue';
+        document.body.style.color='white'
+    }
+    function bgpurple(){
+        document.body.style.backgroundColor='purple';
+        document.body.style.color='white'
+    }
+    function bgorange(){
+        document.body.style.backgroundColor='orange';
+        document.body.style.color='black'
+    }
+    function bgred(){
+        document.body.style.backgroundColor='red';
+        document.body.style.color='black'
+    }
+    function bgyellow(){
+        document.body.style.backgroundColor='yellow';
+        document.body.style.color='red'
+    }
+    function bgwhite(){
+        document.body.style.backgroundColor='white';
+        document.body.style.color='black'
+    }
+    function bgviolet(){
+        document.body.style.backgroundColor='violet';
+        document.body.style.color='white'
+    }
+    function bgpink(){
+        document.body.style.backgroundColor='pink';
+        document.body.style.color='black'
+    }
+    function bggrey(){
+        document.body.style.backgroundColor='grey';
+        document.body.style.color='white'       
+    }
+
+  function alertsavemypage(){
+    var name = prompt('Do You really want to save your file?');
+        if(name!=""){
+            document.write("<br>")
+            document.write(name+", Congrachulessons your files are saved");
+            document.write("<br>")
+            // document.write("Tell me mr."+name+". How can i Help you?");
+  }
+}
+
+</script>
+
+<button onclick="alertsavemypage()">Save Page</button>
+</body>
+</html>

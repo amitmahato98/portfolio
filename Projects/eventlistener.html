@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini-project</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(206, 192, 194);
+            padding: 0 2.5rem;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .card {
+            padding: 0.5rem 1rem;
+            background-color: #f2f2f2;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            border-radius: 0.5rem;
+        }
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icon {
+            margin-right: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .icon.active {
+            transform: rotate(-180deg);
+        }
+
+        .answer {
+            color: #666;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s;
+        }
+
+        /* another way  css*/
+        /* .answer.active{
+            max-height: fit-content;
+        } */
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <h1>FAQ's</h1>
+    <div class="card">
+        <div class="question">
+            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit ?</h4>
+            <i class='icon bx bx-caret-down'></i>
+        </div>
+        <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, culpa. Sequi dolor vel
+            animi ipsum ut architecto excepturi, illo corporis. Itaque aliquam, in at repudiandae explicabo nostrum
+            deserunt ex quod neque dolore harum. Voluptatum non minima atque ducimus est voluptates incidunt nisi
+            tenetur! Inventore quidem a blanditiis laudantium harum dicta!</div>
+    </div>
+    <div class="card">
+        <div class="question">
+            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit ?</h4>
+            <i class='icon bx bx-caret-down'></i>
+        </div>
+        <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, culpa. Sequi dolor vel
+            animi ipsum ut architecto excepturi, illo corporis. Itaque aliquam, in at repudiandae explicabo nostrum
+            deserunt ex quod neque dolore harum. Voluptatum non minima atque ducimus est voluptates incidunt nisi
+            tenetur! Inventore quidem a blanditiis laudantium harum dicta!</div>
+    </div>
+    <div class="card">
+        <div class="question">
+            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit ?</h4>
+            <i class='icon bx bx-caret-down'></i>
+        </div>
+        <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, culpa. Sequi dolor vel
+            animi ipsum ut architecto excepturi, illo corporis. Itaque aliquam, in at repudiandae explicabo nostrum
+            deserunt ex quod neque dolore harum. Voluptatum non minima atque ducimus est voluptates incidunt nisi
+            tenetur! Inventore quidem a blanditiis laudantium harum dicta!</div>
+    </div>
+    <div class="card">
+        <div class="question">
+            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit ?</h4>
+            <i class='icon bx bx-caret-down'></i>
+        </div>
+        <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, culpa. Sequi dolor vel
+            animi ipsum ut architecto excepturi, illo corporis. Itaque aliquam, in at repudiandae explicabo nostrum
+            deserunt ex quod neque dolore harum. Voluptatum non minima atque ducimus est voluptates incidunt nisi
+            tenetur! Inventore quidem a blanditiis laudantium harum dicta!</div>
+    </div>
+    <div class="card">
+        <div class="question">
+            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit ?</h4>
+            <i class='icon bx bx-caret-down'></i>
+        </div>
+        <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, culpa. Sequi dolor vel
+            animi ipsum ut architecto excepturi, illo corporis. Itaque aliquam, in at repudiandae explicabo nostrum
+            deserunt ex quod neque dolore harum. Voluptatum non minima atque ducimus est voluptates incidunt nisi
+            tenetur! Inventore quidem a blanditiis laudantium harum dicta!</div>
+    </div>
+    <div class="card">
+        <div class="question">
+            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit ?</h4>
+            <i class='icon bx bx-caret-down'></i>
+        </div>
+        <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, culpa. Sequi dolor vel
+            animi ipsum ut architecto excepturi, illo corporis. Itaque aliquam, in at repudiandae explicabo nostrum
+            deserunt ex quod neque dolore harum. Voluptatum non minima atque ducimus est voluptates incidunt nisi
+            tenetur! Inventore quidem a blanditiis laudantium harum dicta!</div>
+    </div>
+    <div class="card">
+        <div class="question">
+            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit ?</h4>
+            <i class='icon bx bx-caret-down'></i>
+        </div>
+        <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, culpa. Sequi dolor vel
+            animi ipsum ut architecto excepturi, illo corporis. Itaque aliquam, in at repudiandae explicabo nostrum
+            deserunt ex quod neque dolore harum. Voluptatum non minima atque ducimus est voluptates incidunt nisi
+            tenetur! Inventore quidem a blanditiis laudantium harum dicta!</div>
+    </div>
+
+    <script>
+        var card = document.querySelectorAll('.card');
+
+        card.forEach(card => {
+            const icon = card.querySelector('.icon');
+            const answer = card.querySelector('.answer');
+
+            card.addEventListener('click', () => {
+
+                //    another way js
+                // icon.classList.toggle('active');
+                // answer.classList.toggle('active');
+
+                if (icon.classList.contains('active')) {
+                    icon.classList.remove('active');
+                    answer.style.maxHeight = null;
+                } else {
+                    icon.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
