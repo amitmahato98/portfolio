@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>investigation</title>
+    <link rel="stylesheet" href="detect.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>
+            WHO WILL KIDNAP THEM IN FUTURE LIKE KAMANA!
+        </h1>
+    </header>
+
+    <main>
+        <div class="luv">
+            <h2>Swechchha</h2>
+            <!-- <button type="button" class="button">button</button> -->
+            <input type="button" class="button" value="Click">
+
+            <ul class="lovi">
+                <li>
+                    <span>Amit</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Sushant</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Jivan</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Mandip</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="luv">
+            <h2>Bibhuti</h2>
+            <!-- <button type="button"class="button" >button</button> -->
+            <input type="button" class="button" value="Click">
+
+
+            <ul class="lovi">
+                <li>
+                    <span>Amit</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Sushant</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Jivan</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Mandip</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="luv">
+            <h2>Sabjiwali</h2>
+            <!-- <button type="button" class="button">button</button> -->
+            <input type="button" class="button" value="Click">
+
+            <ul class="lovi">
+                <li>
+                    <span>Amit</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Sushant</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Jivan</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Mandip</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="luv">
+            <h2>Dudhwali</h2>
+            <!-- <button type="button" class="button">button</button> -->
+            <input type="button" class="button" value="Click">
+
+
+            <ul class="lovi">
+                <li>
+                    <span>Amit</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Sushant</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Jivan</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Mandip</span>
+                    <div class="progress">
+                        <div class="progressbar"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+
+
+    <script>
+
+     let btn = document.querySelectorAll('.button')
+     let progressbar = document.querySelectorAll('.progressbar')
+     console.log(btn)
+
+
+     btn.forEach((button,index)=>{
+        button.onclick =()=>{
+            let val1 = Math.floor(Math.random()*100);
+            let val2 = Math.floor(Math.random()*100);
+            let val3 = Math.floor(Math.random()*100);
+            let val4 = Math.floor(Math.random()*100);
+            progressbar[index*4].style.width=val1+'%';
+            progressbar[index*4+1].style.width=val2+'%';
+            progressbar[index*4+2].style.width=val3+'%';
+            progressbar[index*4+3].style.width=val4+'%';
+            progressbar[index*4].innerText = val1+"%";
+            progressbar[index*4+1].innerText = val2+"%";
+            progressbar[index*4+2].innerText = val3+"%";
+            progressbar[index*4+3].innerText = val4+"%";
+        }
+     })
+
+    </script>
+</body>
+
+</html>

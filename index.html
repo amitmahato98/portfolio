@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -11,20 +11,20 @@
 <body>
     <header>
         <nav>
-            <div class="logo">AMIT</div>
+            <div class="logo" onclick="refreshByLogo()"><img src="img/logo.jpg" alt=""></div>
             <div class="menu" id="toggle">
                 <i class='bx bx-menu'></i>
             </div>
             <ul id="nav-menu" class="nav-menu">
-               <a href="#"> <li>HOME</li></a>
-               <a href="#"> <li>ABOUT</li></a>
-               <a href="#"> <li>SERVICES</li></a>
-                <a href="#"><li>WORK</li></a>
-               <a href="#"> <li>BLOG</li></a>
-               <a href="#"> <li>CONTACT</li></a>
+               <a href="#home"> <li>HOME</li></a>
+               <a href="#about"> <li>ABOUT</li></a>
+               <a href="#services"> <li>SERVICES</li></a>
+                <a href="#"><li>PROJECTS</li></a>
+                <a href="#contact"> <li>CONTACT</li></a>
+               <a href="#links"> <li>LINKS</li></a>
             </ul>
         </nav>
-        <div class="hero">
+        <div  id="home" class="hero">
             <img src="img/1bgfull.jpeg" >
             <span>
                 <h1>AMIT MAHATO</h1>
@@ -35,7 +35,7 @@
         </div>
     </header>
     <main>
-        <div class="about">
+        <div id="about" class="about">
             <h1>ABOUT</h1>
             <div class="html">
                 <h2>HTML</h2>
@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <div class="services">
+        <div id="services" class="services">
             <div>
                 <h1>SERVICES</h1>
                 <p>I specialize in developing</p>
@@ -77,7 +77,7 @@
         </div>
         
         <div class="contact">
-            <div class="myJobdesc">
+            <div class="myJobdesc" id="contact" >
                 <h1>GET IN TOUCH</h1>
                 <p> I'm committed to delivering high-quality code and exceptional user experiences. My work undergoes rigorous testing to ensure flawless functionality. I value effective communication, ensuring that I understand your goals and deliver results that align with your vision. I excel at finding innovative solutions and resolving complex challenges efficiently and effectively. I stay up-to-date with the latest industry trends and technologies, providing modern and future-proof solutions.</p>
                 <p>If you're seeking a dedicated HTML, CSS, and JavaScript developer who can turn your ideas into exceptional web experiences, let's connect. I'm ready to collaborate with you to achieve your digital goals.                    </p>
@@ -104,25 +104,35 @@
 
     <footer>
         <div class="copyr">
-            <h4>© Copyright Amit Mahato. All Rights Reserved</h4>
+            <h4>© Copyright Amit Mahato. All Rights Reserved 2024</h4>
         </div>
         <div class="links">
             <a href="https://www.facebook.com/profile.php?id=100054970543276" target="_blank"><img src="img/fb.png"></a>
             <a href="https://www.instagram.com/amisin05?igsh=MTNleGc0cncxY3F3MQ=="  target="_blank"><img src="img/instagram.png"></a>
-            <a href="https://github.com/amitmahato98" target="_blank"><img src="img/github.png"></a>
-            <a href=""></a>
-            <a href=""></a>
+            <a href="https://github.com/amitmahato98" target="_blank" class="github"><img src="img/github.png" ></a>
         </div>
     </footer>
+
+    <div id="links" >
+        <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
+        <!-- <a href=""><img src="img/arrow-up.png"></a> -->
+    </div>
 
 
 
     <script>
+
+        function refreshByLogo(){
+            location.reload();
+        }
+
+        // for navbar
         const togglebutton = document.getElementById('toggle');
         let navmenu = document.getElementById('nav-menu')
         togglebutton.addEventListener('click',() => {
             navmenu.classList.toggle('active');
         })
+
     </script>
 </body>
 </html>

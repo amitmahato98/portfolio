@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body{
+            margin-top: 7% ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0,0,0,0.5)), url(https://png.pngtree.com/background/20230612/original/pngtree-valentine-wallpaper-a-cute-couple-sitting-in-a-red-blanket-with-picture-image_3178580.jpg);
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+            /* position: absolute;
+            top: 15%;
+            left: 27%; */
+        }
+        .header{
+            background-color: #880808;
+            padding: 0.5rem 0;
+            text-align: center;
+            color: white;
+        }
+        .content{
+            background-color: rgb(243, 240, 240);
+        }
+        .input{
+            padding: 2rem;
+        }
+        input{
+            font-size: 1.3rem;
+            padding: 0.4rem 0.1rem;
+        }
+        .button{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            
+        }
+        button{
+            border-radius: 5px;
+            line-height: 1.5rem;
+            width: 40%;
+            background-color: #880808;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: 1px solid #880808;
+        }
+        button:hover{
+            background-color: transparent;
+            color: #880808;
+        }
+        .lovepercentage{
+            padding-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* width: 10vw; */
+        }
+        .lovepercentage input{
+            width: 35vw;
+        }
+        .footer{
+            background-color: #880808;
+            text-align: center;
+            padding: 0.5rem 0;
+            color: white;
+        }
+        @media (width <= 630px) {
+           body{
+            margin-top: 55%;
+           }
+           form{
+            height: auto;
+            width: 75%;
+           }
+
+           input{
+            width: 80vw;
+        }
+        span{
+            margin: 0.5rem 0 0.5rem 42vw;
+        }
+        /* #showlovepercent{
+            padding-left: 3rem;
+        } */
+        .lovepercentage{
+            padding-left: 2rem;
+            /* width: 90vw; */
+            
+           }
+           .lovepercentage input{
+            width: 85vw;
+           }
+           
+           /* .input{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           }
+           .yourname{
+            margin: 1rem 0;
+           } */
+
+            
+        }
+
+    </style>
+</head>
+<body>
+<div>   
+<div class="header"><h1>LOVE  CALCULATOR</h1></div>
+<div class="content">
+    <form action="">
+        <div class="input">
+            <input type="text" placeholder="Your name" class="yourname" id="yourname" required>
+            <span>  +  </span>
+            <input type="text" placeholder="Love Name" class="lovename" id="lovename" required>
+        </div>
+        <div class="button">
+            <button type="button" onclick="swap()" >Swap</button>
+            <button type="button" onclick="lovepercentage()">Click</button>
+        </div>
+        <div class="lovepercentage" id="lovepercentage">
+            <input type="text" placeholder="Love Percentage" id="showlovepercent" disabled>
+        </div>
+    </form>
+</div>
+<div class="footer"> <h3>VALENTINES DAY SPECIAL</h3></div>
+</div> 
+
+<script>
+    function lovepercentage(){
+        var lovedata = (Math.random());
+        lovedata *= 100;
+        var lovepercentage = (Math.floor(lovedata));
+        var lovenameval = document.getElementById('lovename').value;
+        var yournameval = document.getElementById('yourname').value;
+
+        // if(lovepercentage <= 49){
+
+        //     document.getElementById('showlovepercent').value = lovenameval +' is loving '+ yournameval +' as friend';
+        // }
+    //     // if(yournameval)
+    //     switch(yournameval || lovenameval){
+    //         case "Sushant" :
+    //             case "Sushant Nepal" :
+    //                 case "sushant" :
+    //                     lovepercentage = 100;
+    //                         //  document.getElementById('showlovepercent').value = lovenameval +' is loving '+ yournameval +' as friend';
+    //                          document.getElementById('showlovepercent').value = lovepercentage + '%';
+     
+    // }
+        // else{
+
+            document.getElementById('showlovepercent').value = lovepercentage + '%';
+        // }
+    }
+    function swap(){
+        var yourname = document.getElementById('yourname');
+        var lovename = document.getElementById('lovename');
+        var temp = yourname.value;
+        yourname.value = lovename.value;
+        lovename.value = temp;
+    }
+</script>
+
+</body>
+</html>

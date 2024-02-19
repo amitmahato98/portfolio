@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            /* background-image: ; */
+            background-image: linear-gradient(to right,rgb(73, 55, 55), rgb(158, 201, 158));
+            opacity: 100%;
+            
+
+        }
+        input[type=text]{
+            background-image: linear-gradient(to right,rgb(73, 55, 55), rgb(158, 201, 158));
+            color: white;
+            width: 164px;
+        }
+        #clearall{
+            width: 170px;
+        }
+        form{
+            padding: 1rem;
+            border: 1px solid rgb(43, 42, 42);
+            margin: auto;
+            width: 180px;
+            height: 296px;
+        }
+        input{
+            background-image: linear-gradient(to right,rgb(116, 99, 99), rgb(165, 189, 165));
+            width: calc(164px/3);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="" class="form" name="answer">
+            <input type="text" name="answer" placeholder="0" id="result"><br><br>
+            
+
+            <input type="button" value="1" onclick="form.answer.value += '1' ">
+            <input type="button" value="2" onclick="form.answer.value += '2' ">
+            <input type="button" value="3" onclick="form.answer.value += '3' ">
+            <br><br>
+            <input type="button" value="4" onclick="form.answer.value += '4' ">
+            <input type="button" value="5" onclick="form.answer.value += '5' ">
+            <input type="button" value="6" onclick="form.answer.value += '6' ">
+            <br><br>
+            <input type="button" value="7" onclick="form.answer.value += '7' ">
+            <input type="button" value="8" onclick="form.answer.value += '8' ">
+            <input type="button" value="9" onclick="form.answer.value += '9' ">
+            <br><br>
+            <input type="button" value="+" onclick="form.answer.value += '+' ">
+            <input type="button" value="0" onclick="form.answer.value += '0' ">
+            <input type="button" value="-" onclick="form.answer.value += '-' ">
+            <br><br>
+            <input type="button" value="*" onclick="form.answer.value += '*' ">
+            <input type="button" value="/" onclick="form.answer.value += '/' ">
+            <input type="button" id="percent" value="%" onclick="form.answer.value += '*0.01' ">
+            <br><br>
+            <input type="button" value="." onclick="form.answer.value += '.' ">
+            <input type="button" value="=" onclick="form.answer.value = eval(form.answer.value)">
+            <input type="button"  value="C" onclick="del()" />
+                        <br><br>
+            <input type="button" id="clearall" value="Clear All" onclick="form.answer.value='' ">
+          
+
+        </form>
+    </div>
+    <script>
+        function del() {
+      var input = document.getElementById("result");
+      input.value = input.value.substring(0, input.value.length - 1);
+    }
+    </script>
+</body>
+</html>
