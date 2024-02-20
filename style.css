@@ -5,7 +5,6 @@
     list-style: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 nav {
     padding: 0.5rem 1rem;
     display: flex;
@@ -17,39 +16,31 @@ nav {
 }
 .logo img{
     height: 60px;
-    width: 60px;
-    
+    width: 60px;   
 }
 ul {
     display: flex;
     gap: 1.5rem;
-
 }
-
 .menu {
     display: none;
 }
-
 a {
     text-decoration: none;
     color: white;
 }
-
-ul li,
-.logo{
+ul li,.logo{
     transition: .2s ease-in-out;    
     cursor: pointer;
 }
 ul li:hover{
     transform: scale(1.1);
     color: rgb(156, 30, 30);
-
 }
 .logo:hover{
     transform: scale(1.1);
-
 }
-.hero {
+.hero{
     padding: 2rem 0;
     background-image: linear-gradient(to right,rgb(22, 22, 22), rgb(49, 48, 48));
     display: flex;
@@ -58,7 +49,6 @@ ul li:hover{
     color: white;
     font: bolder;
 }
-
 img {
     border-radius: 20px;
     /* width: 30%; */
@@ -68,32 +58,25 @@ img {
 }
 .hero img{
     transition: .2s ease-in-out;    
-
 }
 .hero span p:hover{
         transform: scale(1.05);
 }
 .hero span p{
     transition: .2s ease-in-out;    
-
 }
 .hero span h1:hover{
     transform: scale(1.2);
 }
 .hero span h1{
     transition: .2s ease-out;    
-
 }
-
 .hero span {
     font-size: 2rem;
-
 }
-
-span p:last-child {
+span p:last-child{
     color: rgb(133, 46, 46);
 }
-
 .about {
     padding: 3rem;
     color: black;
@@ -113,22 +96,16 @@ span p:last-child {
     transform: scale(1.02);
     background-color: rgb(90, 89, 89);
 }
-
 .about h1 {
     padding-bottom: 1rem;
 }
-
 .about h2 {
     padding: 1rem 0;
 }
-
 .about p {
     padding-bottom: 2rem;
 }
-
-.html,
-.css,
-.js {
+.html,.css,.js {
     margin: 2rem;
     padding: 1rem;
     transition: .2s ease-in-out;
@@ -136,26 +113,21 @@ span p:last-child {
     background-color: rgb(120, 120, 120);
     box-shadow: 0 2px 4px 0 rgb(3, 3, 3), 0 3px 10px 0 rgba(14, 10, 10, 0.19);
 }
-
 .services {
     background-color: rgb(7, 7, 7);
     color: white;
     padding: 3rem 0;
-
 }
-
 .card-services {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 3rem;
-
 }
-
 .services div:first-child {
     text-align: center;
+    padding: 2rem;
 }
-
 .card {
     display: flex;
     justify-content: center;
@@ -165,13 +137,12 @@ span p:last-child {
     gap: 2.5rem;
     text-align: justify;
     box-shadow: 0 2px 4px 0 rgb(206, 205, 205), 0 3px 10px 0 rgba(189, 188, 188, 0.19);
-    height: 400px;
+    height: 410px;
     width: 30%;
     background-color: rgb(58, 56, 56);
     border-radius: 10px;
     transition: .2s ease-in-out;
 }
-
 .card img {
     width: 100px;
     height: 100px;
@@ -179,21 +150,19 @@ span p:last-child {
     border-radius: 50%;
     transition: .5s ease-in;
 }
-
 .card img:hover {
     border: 10px solid rgb(83, 83, 83);
 }
-
 .card:hover {
     cursor: pointer;
     transform: scale(1.02);
-    background-color: rgb(90, 89, 89);
-    
+    background-color: rgb(90, 89, 89);   
 }
 .contact{
     background-color: rgb(182, 182, 182);
     padding: 4rem;
 }
+/* ---------------------------------+++++++++++----- */
 .myJobdesc h1{
     text-align: center;
     padding-bottom: 2rem;
@@ -211,16 +180,12 @@ span p:last-child {
     padding: 2rem 1rem;
     border-radius: 5px;
 }
-
 .myInfo img {
     width: 50px;
     height: 50px;
     margin-left: 1rem;
 }
-
-.location,
-.mobileNumber,
-.e-Mail {
+.location,.mobileNumber,.e-Mail {
     display: flex;
     align-items: center;
     height: 4rem;
@@ -234,12 +199,10 @@ footer{
     height: 70vh;
     background-color: black;
     color: white;
-    
 }
 .copyr{
     font-size: 1.5rem;
-    padding: 2rem;
-    
+    padding: 2rem; 
 }
 .links img{
     margin: 1rem;
@@ -265,8 +228,6 @@ footer{
     bottom: 2.5rem;
     right: 2rem;
     transition: all .5s ease-out;
-    /* pointer-events: none;
-    opacity: 0; */
 }
 .top:hover{
     background-color: rgb(190, 64, 64);
@@ -279,15 +240,91 @@ html{
 
 
 
+/*       MEDIA QUERY         */
+/* @media (835px < width < 1150px){
+
+} */
 
 
 
+@media (835px < width < 1150px){
+    .hero{
+        justify-content: space-evenly;
+        gap: 1rem;
+        padding: 2rem 0.5rem;
+    }
+    .hero span h1{
+        transition: .2s ease-out; 
+        font-size: 2.8rem;   
+    }
+    .hero span p{
+        font-size: 1.8rem;
+    }
+    .hero span h1:hover{
+        transform: scale(1.08);
+    }
+    .hero img:hover{
+        transform: scale(1.05);
+    }
+    .card{
+        height: 450px;
+        gap: 1rem;
+    }
+}
 
 
+@media (width < 300px){
+    h1{
+        font-size: 1.6rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+    p{
+        font-size: 0.9rem;
+    }
 
+    .hero span{
+        font-size: 1rem;
+    }
+    .about h2{
+        font-size: 1rem;
+    }
+    .html,.css,.js{
+        margin: 1rem;
+        padding: 0.25rem;
+        height: max-content;
+    }
+    .about{
+        padding: 3rem 0.5rem;
+    }
+    .e-Mail p{
+        display: none;
+    }
+    .card{
+        height: max-content;
+        width: max-content;
+    }
+    .location,.mobileNumber,.e-Mail{
+        /* display: block; */
+        flex-direction: column;
+        height: fit-content;
 
+    }
+    .myInfo{
+        margin: 2rem 0.5rem;
+    }
+    .links{
+        display: flex;
+        flex-direction: column;
 
-
+    }
+    .github img{
+        margin: 0;
+        padding: 0;
+    }
+}
+/* 350,600,1150 */
 @media (width < 600px) {
     nav {
         padding: 2rem 0;
@@ -302,7 +339,12 @@ html{
     .logo {
         padding-left: 1rem;
     }
-
+    .hero span h1:hover{
+        transform: scale(1.05);
+    }
+    .hero img:hover{
+        transform: scale(1.05);
+    }
     .nav-menu {
         position: absolute;
         display: flex;
@@ -314,40 +356,126 @@ html{
         background-color: rgb(182, 180, 180);
         overflow: hidden;
     }
-
     li {
         font-size: 2rem;
         margin-top: 2.5rem;
     }
-
     .nav-menu.active {
         left: 0;
         width: 100%;
     }
-
     .hero {
         flex-direction: column;
         row-gap: 5rem;
+        padding: 1rem;
     }
-
     img {
         width: 90%;
     }
-
     .card-services {
         padding: 1.5rem;
         gap: 4rem;
         flex-direction: column;
     }
-
     .card {
         width: 100%;
+        gap: 1rem;
+        text-align: center;
+    }
+    .card p{
+        padding-bottom: 0.5rem;
+    }
+    .html,.css,.js{
+        width: 90%;
     }
     .contact{
-        padding: 4rem 1rem;
+        padding: 4rem 0.5rem;
     }
     .myInfo{
-        margin: 1rem;
+        margin: 0.5rem 0;
+        padding: 2rem 0;
     }
+    .myInfo img{
+        width: 30px;
+        height: 30px;
+        margin-left: 0.5rem;
+    } 
+    .location,.mobileNumber,.e-Mail {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        height: 4rem;
+    }
+    .links img{
+        margin: 0.5rem;
+        height: 30px;
+        width: 30px;
+    }
+    .github img{
+        margin: 0.5rem;
+        height: 30px;
+        width: 70px;
+    }
+}
 
+/* for tablet */
+@media (599px < width < 835px){
+    nav {
+        padding: 2rem 0;
+    }
+    .menu {
+        display: block;
+        font-size: 2rem;
+        padding-right: 1rem;
+    }
+    .logo {
+        padding-left: 1rem;
+    }
+    .hero span h1:hover{
+        transform: scale(1.1);
+    }
+    .hero img:hover{
+        transform: scale(1.1);
+    }
+    .nav-menu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 0;
+        height: 100vh;
+        top: 6.5rem;
+        background-color: rgb(182, 180, 180);
+        overflow: hidden;
+    }
+    li {
+        font-size: 2rem;
+        margin-top: 2.5rem;
+    }
+    .nav-menu.active {
+        left: 0;
+        width: 100%;
+    }
+    .hero {
+        flex-direction: column;
+        row-gap: 5rem;
+        padding: 3rem 1rem;
+    }
+    img {
+        width: 90%;
+    }
+    .card{
+        height: 480px;
+        gap: 1rem;
+        text-align: justify;
+        width: 30%;
+        padding: 0.5rem;
+        justify-content: space-around;
+    }
+    .card:first-child{
+        width: 37%;
+    }
+    .card-services{
+        padding: 3rem 1.5rem;
+    }
 }
