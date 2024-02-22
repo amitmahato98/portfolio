@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
     list-style: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -31,13 +32,11 @@ ul {
     display: none;
 }
 
-a {
-    text-decoration: none;
-    color: white;
+.nav-menu a{
+    color: rgb(255, 255, 255);
 }
 
-ul li,
-.logo{
+ul li,.logo{
     transition: .2s ease-in-out;    
     cursor: pointer;
 }
@@ -50,12 +49,70 @@ ul li:hover{
     transform: scale(1.1);
 
 }
+.miniproject{
+    margin: 3rem 2rem;
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.card{
+    height: 420px;
+    width: 32%;
+    box-shadow: 0 2px 4px 0 rgb(206, 205, 205), 0 3px 10px 0 rgba(189, 188, 188, 0.19);
+    background-color: rgb(209, 203, 206);
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+/* .card img:hover{
+    transform: scale(1.1);
+} */
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card img, .desc h2, .desc p{
+    transition: .5s ease-in;
+}
+.card img:hover{
+    transform: scale(1.1);
+}
+.desc h2:hover{
+    transform: scale(1.075);  
+}
+.desc p:hover{
+    transform: scale(1.05);   
+}
+.img img{
+    border-radius: 10px;
+    margin-top: 1rem;
+    height: 240px;
+    width: 90%;
+    /* object-fit: fill; */
+}
+.desc{
+    padding: 0.51rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.miniproject a{
+    color: black;
+}
+.desc p{
+    width: 90%;
+
+}
 
 
 
 
-
-@media (width < 600px) {
+@media (width < 835px){
     nav {
         padding: 2rem 0;
     }
@@ -86,9 +143,23 @@ ul li:hover{
         font-size: 2rem;
         margin-top: 2.5rem;
     }
-
     .nav-menu.active {
         left: 0;
         width: 100%;
+    }
+
+}
+@media (width < 500px) {
+    .card{
+        width: 95%;
+    }
+}
+@media (480px < width < 868px) {
+    .miniproject{
+        gap: 0.5rem;
+    }
+    .card{
+        height: 440px;
+        width: 47.5%;
     }
 }
