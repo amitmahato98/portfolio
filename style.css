@@ -25,7 +25,7 @@ ul {
 .menu {
     display: none;
 }
-a {
+a{
     text-decoration: none;
     color: white;
 }
@@ -112,6 +112,9 @@ span p:last-child{
     border-radius: 5px;
     background-color: rgb(120, 120, 120);
     box-shadow: 0 2px 4px 0 rgb(3, 3, 3), 0 3px 10px 0 rgba(14, 10, 10, 0.19);
+}
+.html a,.css a,.js a{
+    color: black;
 }
 .services {
     background-color: rgb(7, 7, 7);

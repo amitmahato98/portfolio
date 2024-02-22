@@ -48,99 +48,76 @@ ul li:hover{
 .logo:hover{
     transform: scale(1.1);
 }
-.heading1 h1,.heading2 h1{
-    padding: 3rem 0 3rem 0; 
-    font-size: 2.2rem;
-    text-align: center;
-    transition: .5s ease-in-out;   
-}
-.heading2 h1:hover{
-    text-decoration: underline;
-    text-decoration-color:  rgb(143, 39, 13);
-    text-transform: uppercase;
-}
-.heading1 h1:hover{
-    text-decoration: underline;
-    text-decoration-color:  rgb(143, 39, 13);
-    text-transform: uppercase;
-}
-.miniproject{
-    margin: 3rem 2rem;
-    display: flex;
-    align-items: start;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-.card{
-    height: 420px;
-    width: 32%;
-    box-shadow: 0 2px 4px 0 rgb(206, 205, 205), 0 3px 10px 0 rgba(189, 188, 188, 0.19);
-    background-color: rgb(209, 203, 206);
-    cursor: pointer;
-    border-radius: 10px;
-    overflow: hidden;
-}
-.img{
+.htmlprogress,.cssprogress,.jsprogress{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding: 3rem 0;
+    margin: 3rem 0;
+    width: 85vw;
+    gap: 1rem;
+    border-radius: 10px;
+    background-color: rgb(199, 199, 199);
+    transition: .2s ease-in-out;
+    box-shadow: 0 2px 4px 0 rgb(206, 205, 205), 0 3px 10px 0 rgba(189, 188, 188, 0.19);
 }
-.card img, .desc h2, .desc p{
-    transition: .5s ease-in;
-}
-.card img:hover{
+.jsprogress:hover{
     transform: scale(1.1);
 }
-.desc h2:hover{
-    transform: scale(1.075);  
+.htmlprogress:hover{
+    transform: scale(1.1);
 }
-.desc p:hover{
-    transform: scale(1.05);   
+.cssprogress:hover{
+    transform: scale(1.1);
 }
-.img img{
-    border-radius: 10px;
-    margin-top: 1rem;
-    height: 240px;
-    width: 90%;
-    /* object-fit: fill; */
+.htmlprogress p,.cssprogress p,.jsprogress p{
+    padding: 2rem 1rem;
 }
-.desc{
-    padding: 0.51rem;
+
+.html,.js,.css{
+    height: 40px;
+    width: 80vw;
+    background-color: #f2f2f2;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+.htmlbar{
+    height: 38px;
+    background-color: blue;
+    width: 81%;
+    border-radius: 5px;
+}
+
+span{
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+.cssbar{
+    height: 38px;
+    background-color: blue;
+    width: 86%;
+    border-radius: 5px;
+}
+.jsbar{
+    height: 38px;
+    background-color: blue;
+    width: 69%;
+    border-radius: 5px;
+}
+.progressbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    gap: 0.5rem;
+    margin: 5rem 0;
 }
-.miniproject a{
-    color: black;
-}
-.desc p{
-    width: 90%;
-}
-.l-projects{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.largeproject{
-    height: 32rem;
-    background-color: blanchedalmond;
-}
-.l-project1{
-    /* height: 25rem; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20rem;
-    width: 82%;
-    box-shadow: 0 2px 4px 0 rgb(206, 205, 205), 0 3px 10px 0 rgba(189, 188, 188, 0.19);
-    background-color: rgb(209, 203, 206);
-    cursor: pointer;
-    border-radius: 10px;
-    overflow: hidden;
-}
+
+
+
+
+
 footer{
     display: flex;
     flex-direction: column-reverse;
@@ -168,13 +145,13 @@ footer{
     text-align: center;
 }
 .top{
-    background-color: white;
+    background-color: rgb(4, 92, 33);
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color: rgb(95, 50, 50);
+    color:  white;
     font-size: 1.9rem;
     height: 3rem;
     width: 3rem;
@@ -183,13 +160,15 @@ footer{
     transition: all .5s ease-out;
 }
 .top:hover{
-    background-color: rgb(90, 35, 35);
+    background-color: rgb(255, 255, 255);
     font-size: 2.5rem;
-    color: white;
+    color: rgb(3, 78, 32);
 }
 html{
     scroll-behavior: smooth;
 }
+
+
 
 
 
@@ -230,20 +209,6 @@ html{
         width: 100%;
     }
 
-}
-@media (width < 500px) {
-    .card{
-        width: 95%;
-    }
-}
-@media (480px < width < 868px) {
-    .miniproject{
-        gap: 0.5rem;
-    }
-    .card{
-        height: 440px;
-        width: 47.5%;
-    }
 }
 @media (width < 300px){
     .links{
