@@ -16,9 +16,9 @@
             width: 18vw;
         }
         form{
-            padding: 1rem 0 1rem 2.5rem;
+            padding: 1rem;
             margin: auto;
-            width: 40vw;
+            width: 37vw;
             border-radius: 9px;
             background-color: rgb(173, 167, 119);
         }
@@ -37,6 +37,36 @@
         }
         input{
             border: 2px solid rgb(134, 0, 0);
+        }
+        @media (399px < width < 810px){
+          form{
+            width: 50vw;
+          }
+          input{
+            width: 16vw;
+            font-size: 1rem;
+          }
+          #clearall,a input{
+            width: 24vw;
+          }
+          input[type=text]{
+            width: 46.5vw;
+          }
+        }
+        @media (width < 400px){
+          form{
+            width: 70vw;
+          }
+          input{
+            width: 21vw;
+            font-size: 0.8rem;
+          }
+          #clearall,a input{
+            width: 33.5vw;
+          }
+          input[type=text]{
+            width: 65vw;
+          }
         }
     </style>
 </head>
