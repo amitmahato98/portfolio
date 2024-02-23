@@ -145,7 +145,7 @@ footer{
     text-align: center;
 }
 .top{
-    background-color: rgb(4, 92, 33);
+    background-color: blue;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -162,7 +162,7 @@ footer{
 .top:hover{
     background-color: rgb(255, 255, 255);
     font-size: 2.5rem;
-    color: rgb(3, 78, 32);
+    color: blue;
 }
 html{
     scroll-behavior: smooth;

@@ -5,35 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <style>
-        body{
-            /* background-image: ; */
-            background-image: linear-gradient(to right,rgb(73, 55, 55), rgb(158, 201, 158));
-            opacity: 100%;
-            
-
+        form{
+            border: 2px solid black;
         }
         input[type=text]{
-            background-image: linear-gradient(to right,rgb(73, 55, 55), rgb(158, 201, 158));
             color: white;
-            width: 164px;
+             width: 36vw; 
         }
         #clearall{
-            width: 170px;
+            width: 37vw;
         }
         form{
-            padding: 1rem;
-            border: 1px solid rgb(43, 42, 42);
+            padding: 1rem 0 1rem 2.5rem;
             margin: auto;
-            width: 180px;
-            height: 296px;
+            width: 40vw;
+            border-radius: 9px;
+            background-color: rgb(173, 167, 119);
         }
         input{
+            font-size: 1.5rem;
+            border-radius: 20px;
+            padding: 0.5rem;
+            width: 12vw;
             background-image: linear-gradient(to right,rgb(116, 99, 99), rgb(165, 189, 165));
-            width: calc(164px/3);
+        }
+        h2{
+            margin: 0.5rem;
+            color: rgb(88, 6, 6);
+            text-align: center;
+            text-decoration: underline;
+        }
+        input{
+            border: 2px solid rgb(134, 0, 0);
         }
     </style>
 </head>
 <body>
+    <h2>Calculator</h2>
     <div>
         <form action="" class="form" name="answer">
             <input type="text" name="answer" placeholder="0" id="result"><br><br>
