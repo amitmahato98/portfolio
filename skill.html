@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <div class="logo"><a href="/"><img src="img/logo.jpg" alt=""></a></div>
+            <div class="logo"><a href="index.html"><img src="img/logo.jpg" alt=""></a></div>
             <div class="menu" id="toggle">
                 <i class='bx bx-menu'></i>
             </div>
@@ -78,6 +78,14 @@
     </div>
 
 
+    <script>
+        // nav bar
+        const togglebutton = document.getElementById('toggle');
+        let navmenu = document.getElementById('nav-menu')
+        togglebutton.addEventListener('click', () => {
+            navmenu.classList.toggle('active');
+        })
+    </script>
 </body>
 
 </html>
