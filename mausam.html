@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="mausam.css">
+</head>
+<body>
+    <main>
+        <div class="card">
+            <div class="search">
+                <input type="text" name="" id="cityname" placeholder="Enter city name.">
+               <button> <i class='bx bx-search-alt-2'></i></button>
+            </div>
+            <div class="error">
+                <h3>Invalid City Name.</h3>
+            </div>
+       
+            <div class="weather">
+                <img src="img/rain-mausam.png" class="weathericon">
+                <h2 class="temp">13°C</h3>
+                <h1 class="city">Koshi</h2>
+            </div>
+
+            <div class="details">
+                <div class="humidity">
+                    <img src="img/humidity.png">
+                    <div class="humiditydata">
+                        <h3>Humidity</h3>
+                        <p class="humiditypercent">50%</p>
+                    </div>
+                </div>
+                <div class="wind">
+                    <img src="img/windspeed.png">
+                    <div class="winddata">
+                        <h3>Wind Speed</h3>
+                        <p class="windspeed">15KM/hr</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const apikey = 'e14c33c69089970448c2c16c250bd536';
+        const apiurl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
+        const searchbox = document.querySelector('.search input');
+        const searchbtn = document.querySelector('.search button');
+        const weatherIcon = document.querySelector('.weathericon');
+        async function checkweather(city){
+            const response = await fetch(apiurl + city+`&appid=${apikey}`);
+            var data = await response.json();
+
+            if(response.status == 404){
+                document.querySelector('.error').style.display = 'flex';
+                document.querySelector('.weather').style.display = 'none';
+                document.querySelector('.details').style.display = 'none';  
+            }else{
+
+           
+
+            document.querySelector('.city').innerHTML = data.name;
+            document.querySelector('.temp').innerHTML = Math.round(data.main.temp)+'°C';
+            document.querySelector('.humiditypercent').innerHTML = data.main.humidity+'%';
+            document.querySelector('.windspeed').innerHTML = data.wind.speed+'KM/hr';
+
+            if(data.weather[0].main == 'Clouds'){
+                weatherIcon.src = 'img/cloud.png'
+            }
+            else if(data.weather[0].main == 'Rain'){
+                weatherIcon.src = 'img/rain.png'
+            }
+            else if(data.weather[0].main == 'Clear'){
+                weatherIcon.src = 'img/clear.png'
+            }
+            else if(data.weather[0].main == 'Drizzle'){
+                weatherIcon.src = 'img/drizzle.png'
+            }
+            else if(data.weather[0].main == 'Mist'){
+                weatherIcon.src = 'img/mist.png'
+            }
+            else if(data.weather[0].main == 'Snow'){
+                weatherIcon.src = 'img/snow.png'
+            }
+
+            document.querySelector('.error').style.display = 'none';
+            document.querySelector('.weather').style.display = 'flex';
+            document.querySelector('.details').style.display = 'flex';
+        }
+        }
+        searchbtn.addEventListener('click', () => {
+
+            checkweather(searchbox.value);
+        })
+    </script>
+</body>
+</html>

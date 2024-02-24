@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card{
+    color: rgb(197, 197, 197);
+    width: 30%;
+    margin: 3rem auto;
+    height: max-content;
+    padding: 2rem;
+    border-radius: 10px;
+    background: linear-gradient(130deg, #00feba , #5b548a);
+}
+.weather{
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.weather img{
+    height: 150px;
+    width: 140px;
+}
+input{
+    width: 20vw;
+    font-size: 1.3rem;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 0.7rem;
+    outline: none;
+}
+button{
+    /* background-color: transparent; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    border: 2px solid black;
+}
+.details{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.details img{
+    margin: 1rem 0;
+    height: 60px;
+    width: 50px; 
+}
+.humidity,.wind{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.weather,.details{
+    display: none;
+}
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    display: none;
+}
+
+
+@media (width < 1000px){
+    .card{
+        width: 40%;
+    }
+    input{
+        width: 25vw;
+    }
+    .details{
+        gap: 2rem;
+    }
+}
+@media (width < 800px){
+    .card{
+        width: 50%;
+    }
+    input{
+        width: 35vw;
+    }
+    .details{
+        gap: 2rem;
+    }
+}
+@media (width < 600px){
+    .card{
+        padding: 1rem;
+        width: 60%;
+    }
+    input{
+        width: 40vw;
+    }
+    .details{
+        flex-direction: column;
+    }
+}
+@media (width < 400px){
+    .card{
+        width: 70%;
+        padding: 1rem;
+    }
+    input{
+        width: 40vw;
+    }
+}
+@media (width < 250px){
+    .card{
+        width: 85%;
+    }
+    input{
+        width: 40vw;
+    }
+}
