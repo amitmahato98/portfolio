@@ -194,6 +194,19 @@ span p:last-child{
     height: 4rem;
     gap: 2rem;
 }
+.form a{
+    text-align: center;
+    color: black;
+    filter: drop-shadow(5px 5px 3px rgb(172, 81, 81));
+}
+.form a:hover{
+    color: red;
+}
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 footer{
     display: flex;
     flex-direction: column-reverse;

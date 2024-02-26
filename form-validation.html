@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form-validation</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        form {
+            background-color: #d6f6f6;
+            width: 50%;
+            margin: auto;
+            /* background-color: rgb(167, 171, 175); */
+            padding: 1rem;
+            border-radius: 10px;
+            filter: drop-shadow(10px 10px 10px darkblue);
+        }
+
+        div {
+            margin-bottom: 1rem;
+        }
+
+        input {
+            padding: 0.5rem;
+            border: 1px solid darkblue;
+            outline: none;
+            width: 50%;
+            border-radius: 10px;
+        }
+
+        textarea {
+            border-radius: 10px;
+            width: 50%;
+            padding: 0.5rem;
+            outline: none;
+            border: 1px solid darkblue;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem auto 0;
+            padding: 0.5rem 1rem;
+            background-color: darkblue;
+            color: white;
+            outline: none;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: white;
+            color: darkblue;
+            cursor: pointer;
+        }
+
+        span{
+            color: rgb(124, 11, 11);
+            margin-left: 1rem;
+            font-size: 0.8rem;
+        }
+        .submit-error,p{
+            text-align: center;
+            color: rgb(124, 11, 11);
+            /* display: none; */
+        }
+        form i{
+            color: green;
+            /* background-color: green; */
+        }
+
+        em {
+            color: rgb(124, 11, 11);
+        }
+        button h4{
+            color: rgb(124,11,11);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <form action="">
+
+        <div class="fullname">EnterFull Name <em>*</em> : <input type="text" name="Full name" id="fullname"
+                placeholder="Enter your Full Name" required onkeyup="validatename()"><span id="name-error"></span></div>
+        <div class="mobileNumber">Enter Number <em>*</em> : <input type="number" name="Full name"
+                id="mobilenumber" placeholder="Enter your Number" required onkeyup="validatenumber()"><span id="number-error"></span></div>
+        <div class="email">Enter e-Mail <em>*</em> : <input type="email" name="Full name" id="email"
+                placeholder="Enter your Email" required onkeyup="validateemail()"><span id="email-error"></span></div>
+        <label for="message">Enter your Message:<textarea name="" id="message" cols="15" rows="10"
+                placeholder="Enter your Message or Comment"></textarea></label>
+        <button type="submit" id="button" onclick="return validatebutton()">Submit</button><p id="button-error"></p>
+    </form>
+
+<!-- ------------------------------------------ -->
+<script>
+ var fullnameerror = document.getElementById('name-error');
+ var mobileNumbererror = document.getElementById('number-error');
+ var emailerror = document.getElementById('email-error');
+ var buttonerror = document.getElementById('button-error');
+
+ function validatename(){
+    var fullname = document.getElementById('fullname').value;
+    if(!fullname.match(/^[a-zA-Z]+ [a-zA-Z]+$/)){
+        fullnameerror.innerHTML = 'write full name';
+        return false;
+    }
+    fullnameerror.innerHTML = "<i class='bx bxs-check-circle'></i>";
+    return true;
+ }
+ function validatenumber(){
+    var mobileNumber = document.getElementById('mobilenumber').value;
+    // if(mobileNumber.length !== 10){
+    //     mobileNumbererror.innerHTML = 'less than 10 digits';
+    //     return false;
+    // }
+    // if(mobileNumber.length < 10){
+        //     mobileNumbererror.innerHTML = 'less than 10 digits';
+        //     return false;
+    // }
+    // if(mobileNumber.length > 10){
+        //     mobileNumbererror.innerHTML = 'more than 10 digits';
+    //     return false;
+    // }
+
+    if(!mobileNumber.match(/^\d{10}$/)){
+        mobileNumbererror.innerHTML = 'invalid number'
+        return false;
+    }
+
+    mobileNumbererror.innerHTML = "<i class='bx bxs-check-circle'></i>";
+    return true;
+}
+
+// function validateemail(){
+//     var email = document.getElementById('email').value;
+    
+//     if(!email.match( /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)){
+//         emailerror.innerHTML = 'invalid email';
+//         return false
+//     }
+//     emailerror.innerHTML = "<i class='bx bxs-check-circle'></i>";
+//     return true;
+//  }
+
+function validatebutton(){
+    if(!validatenumber() || !validatename()){
+        buttonerror.innerHTML = 'Check your filled data';
+    }
+}
+
+</script>
+
+
+
+</body>
+
+</html>
