@@ -7,6 +7,9 @@
     <title>form-validation</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
+        body{
+            background-color: darkgray;
+        }
         * {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 1.1rem;
@@ -15,7 +18,7 @@
         }
 
         form {
-            background-color: #d6f6f6;
+            background-color: #e3e1eb;
             width: 50%;
             margin: auto;
             /* background-color: rgb(167, 171, 175); */
@@ -83,6 +86,12 @@
         }
         button h4{
             color: rgb(124,11,11);
+        }
+        @media(width < 500px){
+            form{
+                width: 80%;
+                margin: 5rem auto;
+            }
         }
     </style>
 </head>
