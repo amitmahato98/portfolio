@@ -87,6 +87,9 @@
         button h4{
             color: rgb(124,11,11);
         }
+        #msg{
+            color: green;
+        }
         @media(width < 500px){
             form{
                 width: 80%;
@@ -99,17 +102,18 @@
 <body>
 
 
-    <form action="">
+    <form id="form" name="submit-to-google-sheet" >
 
-        <div class="fullname">EnterFull Name <em>*</em> : <input type="text" name="Full name" id="fullname"
+        <div class="fullname">EnterFull Name <em>*</em> : <input type="text" name="Full-name" id="fullname"
                 placeholder="Enter your Full Name" required onkeyup="validatename()"><span id="name-error"></span></div>
-        <div class="mobileNumber">Enter Number <em>*</em> : <input type="number" name="Full name"
+        <div class="mobileNumber">Enter Number <em>*</em> : <input type="number" name="Mobile-number"
                 id="mobilenumber" placeholder="Enter your Number" required onkeyup="validatenumber()"><span id="number-error"></span></div>
-        <div class="email">Enter e-Mail <em>*</em> : <input type="email" name="Full name" id="email"
+        <div class="email">Enter e-Mail <em>*</em> : <input type="email" name="Email" id="email"
                 placeholder="Enter your Email" required onkeyup="validateemail()"><span id="email-error"></span></div>
-        <label for="message">Enter your Message:<textarea name="" id="message" cols="15" rows="10"
+        <label for="message">Enter your Message:<textarea name="Messages" id="message" cols="15" rows="10"
                 placeholder="Enter your Message or Comment"></textarea></label>
         <button type="submit" id="button" onclick="return validatebutton()">Submit</button><p id="button-error"></p>
+        <span id="msg"></span>
     </form>
 
 <!-- ------------------------------------------ -->
@@ -168,6 +172,38 @@ function validatebutton(){
         buttonerror.innerHTML = 'Check your filled data';
     }
 }
+
+
+
+
+
+
+// <form name="submit-to-google-sheet">
+//   <input name="email" type="email" placeholder="Email" required>
+//   <button type="submit">Send</button>
+// </form>
+
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyusYXkMMInvNECe91FJjgvpvtm0BHpRvsw1m4z1X6Ngj097Bm4-PifjxLhF32VEGpsmg/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const formreply = document.getElementById('msg');
+const forms = document.getElementById('form'); // Replace 'yourFormId' with the actual ID of your form
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+      formreply.innerHTML = 'Thanks for messaging!';
+    //   forms.reset();
+      setTimeout(() => {
+        formreply.innerHTML = ''; // Remove the message after 5 seconds
+      }, 5000); // 5000 milliseconds = 5 seconds
+    })
+    .catch(error => console.error('Error!', error.message));
+    forms.reset();
+});
+
+
 
 </script>
 
