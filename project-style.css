@@ -9,7 +9,7 @@
 
 :root{
     --primary-color : white;
-    --footer-header : black;
+    --footer-header : rgb(8, 8, 8);
     --h1-color: black;
     --card-color: rgb(151, 145, 145);
  
@@ -31,7 +31,7 @@ main{
 .mode{
     position: fixed;
     right: 2.5%;
-    background-color: white;
+    background-color: var(--h1-color);
     padding: 0.4rem 0.5rem;
     border-radius: 50%;
     border: 1px solid rgb(95, 93, 93);
@@ -78,8 +78,6 @@ ul li:hover{
 }
 .logo:hover{
     transform: scale(1.1);
-}
-.heading1 h1{
 }
 .heading1 h1,.heading2 h1{
     color: var(--h1-color);

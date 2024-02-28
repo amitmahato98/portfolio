@@ -24,6 +24,9 @@
                <a href="#links"> <li>LINKS</li></a>
             </ul>
         </nav>
+        <div class="mode" id="mode-icon" onclick="drakBrightmode()">
+            <img src="img/darkmode.png" id="mode-img">
+           </div>
         <div  id="home" class="hero">
             <img src="img/1bgfull.jpeg" >
             <span>
@@ -85,7 +88,7 @@
                 <h1>GET IN TOUCH</h1>
                 <p> I'm committed to delivering high-quality code and exceptional user experiences. My work undergoes rigorous testing to ensure flawless functionality. I value effective communication, ensuring that I understand your goals and deliver results that align with your vision. I excel at finding innovative solutions and resolving complex challenges efficiently and effectively. I stay up-to-date with the latest industry trends and technologies, providing modern and future-proof solutions.</p>
                 <p>If you're seeking a dedicated HTML, CSS, and JavaScript developer who can turn your ideas into exceptional web experiences, let's connect. I'm ready to collaborate with you to achieve your digital goals.                    </p>
-                <h2 class="form"><a href="form-validation.html">Click to Fill Form</a></h2>
+                <h2 class="form"><a href="form-validation.html">Click Here to Fill Form</a></h2>
             </div>
             <div class="myInfo">
                 <div class="location">
@@ -137,6 +140,22 @@
         togglebutton.addEventListener('click',() => {
             navmenu.classList.toggle('active');
         })
+
+           // mode-icon
+           var modeicon = document.getElementById('mode-icon');
+        var modeimg = document.getElementById('mode-img');
+        // function drakBrightmode(){
+        //     document.body.classList.toggle('darkmode');
+        // }
+        modeicon.onclick = function(){
+            document.body.classList.toggle('darkmode');
+            if( document.body.classList.contains('darkmode')){
+                modeimg.src = 'img/brightmode.png'
+            }else{
+                modeimg.src = 'img/darkmode.png'
+
+            }
+        }
 
     </script>
 </body>
