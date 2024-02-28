@@ -7,13 +7,44 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+:root{
+    --primary-color : white;
+    --footer-header : black;
+    --h1-color: black;
+    --card-color: rgb(151, 145, 145);
+ 
+}
+.darkmode{
+    --primary-color : black;
+    --h1-color: white;
+    --card-color: rgb(95, 94, 95);
+    --footer-header : rgb(59, 58, 58);
+    
+}
+main{
+    background-color: var(--primary-color);
+}
+.mode img{
+    width: 30px;
+    color: black;
+}
+.mode{
+    position: fixed;
+    right: 2.5%;
+    background-color: white;
+    padding: 0.4rem 0.5rem;
+    border-radius: 50%;
+    border: 1px solid rgb(95, 93, 93);
+    cursor: pointer;
+
+}
 nav {
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.3rem;
-    background-color: black;
+    background-color: var(--footer-header);
     color: white;
 }
 .logo img{
@@ -48,7 +79,10 @@ ul li:hover{
 .logo:hover{
     transform: scale(1.1);
 }
+.heading1 h1{
+}
 .heading1 h1,.heading2 h1{
+    color: var(--h1-color);
     padding: 3rem 0 3rem 0; 
     font-size: 2.2rem;
     text-align: center;
@@ -76,7 +110,7 @@ ul li:hover{
     height: 420px;
     width: 32%;
     box-shadow: 0 2px 4px 0 rgb(206, 205, 205), 0 3px 10px 0 rgba(189, 188, 188, 0.19);
-    background-color: rgb(209, 203, 206);
+    background-color: var(--card-color);
     cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
@@ -126,7 +160,7 @@ ul li:hover{
 }
 .largeproject{
     height: 32rem;
-    background-color: blanchedalmond;
+    background-color: var(--primary-color);
 }
 .l-project1{
     /* height: 25rem; */
@@ -136,7 +170,7 @@ ul li:hover{
     height: 20rem;
     width: 82%;
     box-shadow: 0 2px 4px 0 rgb(206, 205, 205), 0 3px 10px 0 rgba(189, 188, 188, 0.19);
-    background-color: rgb(209, 203, 206);
+    background-color: var(--card-color);
     cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
@@ -178,7 +212,7 @@ footer{
     justify-content: space-evenly;
     align-items: center;
     height: 70vh;
-    background-color: black;
+    background-color: var(--footer-header);
     color: white;
 }
 .copyr{
@@ -212,6 +246,7 @@ footer{
     bottom: 2.5rem;
     right: 2rem;
     transition: all .5s ease-out;
+    border: 1px solid rgb(95, 93, 93);
 }
 .top:hover{
     background-color: rgb(90, 35, 35);

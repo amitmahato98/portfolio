@@ -32,6 +32,9 @@
             </ul>
         </nav>
     </header>
+    <div class="mode" id="mode-icon" onclick="drakBrightmode()">
+     <img src="img/darkmode.png" id="mode-img">
+    </div>
     <main>
         <section  class="heading1">
             <h1 id="miniprojects">Mini-Projects</h1>
@@ -124,7 +127,7 @@
             <a href="https://www.instagram.com/amisin05?igsh=MTNleGc0cncxY3F3MQ==" ><img src="img/instagram.png"></a>
             <a href="https://github.com/amitmahato98" class="github"><img src="img/github.png" ></a>
         </div>
-        <div id="links" >
+        <div id="links">
             <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
         </div>
     </footer>
@@ -138,6 +141,21 @@
         togglebutton.addEventListener('click', () => {
             navmenu.classList.toggle('active');
         })
+        // mode-icon
+        var modeicon = document.getElementById('mode-icon');
+        var modeimg = document.getElementById('mode-img');
+        // function drakBrightmode(){
+        //     document.body.classList.toggle('darkmode');
+        // }
+        modeicon.onclick = function(){
+            document.body.classList.toggle('darkmode');
+            if( document.body.classList.contains('darkmode')){
+                modeimg.src = 'img/brightmode.png'
+            }else{
+                modeimg.src = 'img/darkmode.png'
+
+            }
+        }
     </script>
 </body>
 
