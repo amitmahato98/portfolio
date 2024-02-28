@@ -118,6 +118,16 @@ ul li:hover{
     background-color: blue;
     width: 81%;
     border-radius: 5px;
+    animation: html-bar 2s ease-out;
+
+}
+@keyframes html-bar {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 81%;
+    }
 }
 
 span{
@@ -130,12 +140,32 @@ span{
     background-color: blue;
     width: 86%;
     border-radius: 5px;
+    animation: css-bar 2.5s ease-out forwards;
+
+}
+@keyframes css-bar {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 86%;
+    }
 }
 .jsbar{
     height: 38px;
     background-color: blue;
     width: 69%;
     border-radius: 5px;
+    animation: js-bar 2.5s ease-out;
+
+}
+@keyframes js-bar {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 69%;
+    }
 }
 .progressbar{
     display: flex;
@@ -143,6 +173,11 @@ span{
     justify-content: center;
     flex-direction: column;
     padding: 5rem 0;
+}
+.htmlbar,.cssbar,.jsbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer{
