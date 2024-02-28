@@ -515,7 +515,7 @@ html{
         width: 0;
         height: 100vh;
         top: 6.5rem;
-        background-color: rgb(182, 180, 180);
+        background-color: var(--card-color);
         overflow: hidden;
     }
     li {
