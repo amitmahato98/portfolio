@@ -105,11 +105,11 @@
     <form id="form" name="submit-to-google-sheet" >
 
         <div class="fullname">EnterFull Name <em>*</em> : <input type="text" name="Full-name" id="fullname"
-                placeholder="Enter your Full Name" required onkeyup="validatename()"><span id="name-error"></span></div>
+                placeholder="Enter your Full Name" autocomplete="off" required onkeyup="validatename()"><span id="name-error"></span></div>
         <div class="mobileNumber">Enter Number <em>*</em> : <input type="number" name="Mobile-number"
-                id="mobilenumber" placeholder="Enter your Number" required onkeyup="validatenumber()"><span id="number-error"></span></div>
+                id="mobilenumber" autocomplete="off" placeholder="Enter your Number" required onkeyup="validatenumber()"><span id="number-error"></span></div>
         <div class="email">Enter e-Mail <em>*</em> : <input type="email" name="Email" id="email"
-                placeholder="Enter your Email" required onkeyup="validateemail()"><span id="email-error"></span></div>
+                placeholder="Enter your Email" autocomplete="off" required onkeyup="validateemail()"><span id="email-error"></span></div>
         <label for="message">Enter your Message:<textarea name="Messages" id="message" cols="15" rows="10"
                 placeholder="Enter your Message or Comment"></textarea></label>
         <button type="submit" id="button" onclick="return validatebutton()">Submit</button><p id="button-error"></p>

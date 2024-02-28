@@ -266,6 +266,10 @@ footer{
     margin: 1rem;
     height: 50px;
     width: 50px;
+    transition: .2s ease-in-out;
+}
+.links img:hover{
+    transform: scale(1.1);
 }
 .github img{
     margin: 1rem;

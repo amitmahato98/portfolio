@@ -6,14 +6,45 @@
     list-style: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+:root{
+    --primary-color : white;
+    --footer-header : rgb(8, 8, 8);
+    --h1-color: black;
+    --card-color: rgb(151, 145, 145);
+    --progressbar-color: #f2f2f2;
+    
+}
+.darkmode{
+    --progressbar-color: rgb(189, 180, 180);
+    --primary-color : black;
+    --h1-color: white;
+    --card-color: rgb(95, 94, 95);
+    --footer-header : rgb(59, 58, 58);
+    
+}
+.mode img{
+    width: 30px;
+    color: black;
+}
+.mode{
+    position: fixed;
+    right: 2.5%;
+    background-color: var(--h1-color);
+    padding: 0.4rem 0.5rem;
+    border-radius: 50%;
+    border: 1px solid rgb(95, 93, 93);
+    cursor: pointer;
+}
+main{
+    background-color: var(--primary-color);
+}
 nav {
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.3rem;
-    background-color: black;
+    background-color: var(--footer-header);
     color: white;
 }
 .logo img{
@@ -58,18 +89,18 @@ ul li:hover{
     width: 85vw;
     gap: 1rem;
     border-radius: 10px;
-    background-color: rgb(199, 199, 199);
+    background-color: var(--card-color);
     transition: .2s ease-in-out;
     box-shadow: 0 2px 4px 0 rgb(206, 205, 205), 0 3px 10px 0 rgba(189, 188, 188, 0.19);
 }
 .jsprogress:hover{
-    transform: scale(1.1);
+    transform: scale(1.06);
 }
 .htmlprogress:hover{
-    transform: scale(1.1);
+    transform: scale(1.06);
 }
 .cssprogress:hover{
-    transform: scale(1.1);
+    transform: scale(1.06);
 }
 .htmlprogress p,.cssprogress p,.jsprogress p{
     padding: 2rem 1rem;
@@ -78,7 +109,7 @@ ul li:hover{
 .html,.js,.css{
     height: 40px;
     width: 80vw;
-    background-color: #f2f2f2;
+    background-color: var(--progressbar-color);
     border: 1px solid blue;
     border-radius: 5px;
 }
@@ -111,12 +142,8 @@ span{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 5rem 0;
+    padding: 5rem 0;
 }
-
-
-
-
 
 footer{
     display: flex;
@@ -124,7 +151,7 @@ footer{
     justify-content: space-evenly;
     align-items: center;
     height: 70vh;
-    background-color: black;
+    background-color: var(--footer-header);
     color: white;
 }
 .copyr{
@@ -135,6 +162,10 @@ footer{
     margin: 1rem;
     height: 50px;
     width: 50px;
+    transition: .2s ease-in-out;
+}
+.links img:hover{
+    transform: scale(1.1);
 }
 .github img{
     margin: 1rem;
@@ -143,6 +174,7 @@ footer{
 }
 .copyr h4{
     text-align: center;
+    /* color: var(--h1-color); */
 }
 .top{
     background-color: blue;
