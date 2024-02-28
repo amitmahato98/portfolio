@@ -29,6 +29,9 @@ main{
     color: black;
 }
 .mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     right: 2.5%;
     background-color: var(--h1-color);

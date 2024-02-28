@@ -11,13 +11,6 @@
     --h1-color: black;
     --card-color: rgb(151, 145, 145);
     --secondary-color : rgb(182, 182, 182);
-
- 
-    /* --primary-color : black;
-    --h1-color: white;
-    --card-color: rgb(95, 94, 95);
-    --footer-header : rgb(59, 58, 58);
-    --secondary-color : black; */
 }
 .darkmode{
     --primary-color : black;
@@ -33,6 +26,9 @@
     color: black;
 }
 .mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 10%;
     right: 2.5%;
