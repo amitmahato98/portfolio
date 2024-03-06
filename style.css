@@ -6,18 +6,21 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 :root{
-    --primary-color : white;
-    --footer-header : black;
+    --primary-color : #7450ed;
+    --footer-header : rgb(36, 35, 35);
     --h1-color: black;
-    --card-color: rgb(151, 145, 145);
-    --secondary-color : rgb(182, 182, 182);
+    --card-color: rgb(177, 176, 176);
+    --secondary-color : #ea445a;
+    --uptodown-button : #51dde1;
+    --form-shadow : ;
 }
 .darkmode{
-    --primary-color : black;
+    --form-shadow : #0c5509;
+    --primary-color : #0f0725;
     --h1-color: white;
-    --card-color: rgb(95, 94, 95);
-    --footer-header : rgb(59, 58, 58);
-    --secondary-color : black;
+    --card-color: rgb(116, 114, 116);
+    --footer-header : #000000;
+    --secondary-color : #27070c;
 
 }
 
@@ -76,7 +79,8 @@ ul li:hover{
 }
 .hero{
     padding: 2rem 0;
-    background-image: linear-gradient(to right,var(--primary-color), var(--secondary-color));
+    /* background-image: linear-gradient(to right,var(--primary-color), var(--secondary-color)); */
+    background-color: var(--primary-color);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -91,6 +95,7 @@ img {
     transform: scale(1.1);
 }
 .hero img{
+    width: 36%;
     transition: .2s ease-in-out;    
 }
 .hero span p:hover{
@@ -116,8 +121,107 @@ span p:last-child{
     color: black;
     background-color: var(--secondary-color);
 }
+
+.html .htmlprogress{
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 2rem;
+    background-color: #fff;
+    border: 2px solid rgb(4, 4, 114);
+    outline: none;
+    border-radius: 5px;
+    margin: 0.5rem 0 2rem 0;
+}
+.htmlprogress .htmlbar{
+    background-color: rgb(26, 26, 207);
+    width: 81%;
+    height: 100%;
+    border-radius: 3px;
+    animation: animatehtml ease-out 2s;
+}
+@keyframes animatehtml{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 81%;
+    }
+}
+.htmlbar span{
+    padding-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.css .cssprogress{
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 2rem;
+    background-color: #fff;
+    border: 2px solid rgb(4, 4, 114);
+    outline: none;
+    border-radius: 5px;
+    margin: 0.5rem 0 2rem 0;
+}
+.cssprogress .cssbar{
+    background-color: rgb(26, 26, 207);
+    width: 85%;
+    height: 100%;
+    border-radius: 3px;
+    animation: animatecss ease-out 2s;
+}
+@keyframes animatecss{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 85%;
+    }
+}
+.cssbar span{
+    padding-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.js .jsprogress{
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 2rem;
+    background-color: #fff;
+    border: 2px solid rgb(4, 4, 114);
+    outline: none;
+    border-radius: 3px;
+    margin: 0.5rem 0 2rem 0;
+}
+.jsprogress .jsbar{
+    background-color: rgb(26, 26, 207);
+    width: 69%;
+    height: 100%;
+    border-radius: 3px;
+    animation: animatejs ease-out 2s;
+}
+@keyframes animatejs{
+    0%{width: 0;}
+    100%{width: 69%;}
+}
+.jsbar span{
+    padding-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .html:hover{
-    transform: scale(1.02);
+    transform: scale(1.0159);
     /* transition: .2s ease-in-out; */
     background-color: rgb(90, 89, 89);
 }
@@ -131,6 +235,7 @@ span p:last-child{
     background-color: rgb(90, 89, 89);
 }
 .about h1 {
+    color: var(--h1-color);
     padding-bottom: 1rem;
 }
 .about h2 {
@@ -147,13 +252,10 @@ span p:last-child{
     background-color: var(--card-color);
     box-shadow: 0 2px 4px 0 rgb(3, 3, 3), 0 3px 10px 0 rgba(14, 10, 10, 0.19);
 }
-.html a,.css a,.js a{
-    color: black;
-}
 .services {
-    background-image: linear-gradient(to right,var(--secondary-color), var(--primary-color));
+    /* background-image: linear-gradient(to right,var(--secondary-color), var(--primary-color)); */
 
-    /* background-color: rgb(7, 7, 7); */
+    background-color: var(--primary-color);
     color: var(--h1-color);
     padding: 3rem 0;
 }
@@ -235,11 +337,11 @@ span p:last-child{
 .form a{
     text-align: center;
     color: var(--h1-color);
-    filter: drop-shadow(5px 5px 3px rgb(172, 81, 81));
+    filter: drop-shadow(5px 5px 3px #36ac21);
 }
-.form a:hover{
-    color: red;
-}
+/* .form a:hover{
+    color: rgb(59, 124, 161);
+} */
 .form{
     display: flex;
     align-items: center;
@@ -273,7 +375,7 @@ footer{
     width: 100px;
 }
 .top{
-    background-color: var(--h1-color);
+    background-color: var(--uptodown-button);
     position: fixed;
     display: flex;
     justify-content: center;
@@ -286,6 +388,7 @@ footer{
     bottom: 2.5rem;
     right: 2rem;
     transition: all .5s ease-out;
+    /* opacity: 1.1; */
 }
 .top:hover{
     background-color: rgb(190, 64, 64);
