@@ -8,14 +8,14 @@
 }
 
 :root{
-    --primary-color : white;
+    --primary-color : #c5c9c575;
     --footer-header : rgb(8, 8, 8);
     --h1-color: black;
-    --card-color: rgb(151, 145, 145);
+    --card-color: #44464433;
  
 }
 .darkmode{
-    --primary-color : black;
+    --primary-color : #0000009f;
     --h1-color: white;
     --card-color: rgb(95, 94, 95);
     --footer-header : rgb(59, 58, 58);
@@ -121,10 +121,10 @@ ul li:hover{
     justify-content: center;
 }
 .card img, .desc h2, .desc p{
-    transition: .5s ease-in;
+    transition: .3s ease-in;
 }
 .card img:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .desc h2:hover{
     transform: scale(1.075);  
