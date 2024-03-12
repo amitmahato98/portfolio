@@ -8,6 +8,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         body{
+            display: block;
+            align-items: center;
+            justify-content: center;
+            /* margin: 12.5vh 0; */
             background-color: darkgray;
         }
         * {
@@ -18,9 +22,10 @@
         }
 
         form {
+            text-align: center;
             background-color: #e3e1eb;
-            width: 50%;
-            margin: auto;
+            width: 65%;
+            margin: 2.5vh auto 0 auto;
             /* background-color: rgb(167, 171, 175); */
             padding: 1rem;
             border-radius: 10px;
@@ -35,13 +40,13 @@
             padding: 0.5rem;
             border: 1px solid darkblue;
             outline: none;
-            width: 50%;
+            width: 70%;
             border-radius: 10px;
         }
 
         textarea {
             border-radius: 10px;
-            width: 50%;
+            width: 90%;
             padding: 0.5rem;
             outline: none;
             border: 1px solid darkblue;
@@ -90,7 +95,7 @@
         #msg{
             color: green;
         }
-        @media(width < 500px){
+        @media(width < 600px){
             form{
                 width: 80%;
                 margin: 5rem auto;
@@ -104,14 +109,14 @@
 
     <form id="form" name="submit-to-google-sheet" >
 
-        <div class="fullname">EnterFull Name <em>*</em> : <input type="text" name="Full-name" id="fullname"
-                placeholder="Enter your Full Name" autocomplete="off" required onkeyup="validatename()"><span id="name-error"></span></div>
-        <div class="mobileNumber">Enter Number <em>*</em> : <input type="number" name="Mobile-number"
-                id="mobilenumber" autocomplete="off" placeholder="Enter your Number" required onkeyup="validatenumber()"><span id="number-error"></span></div>
-        <div class="email">Enter e-Mail <em>*</em> : <input type="email" name="Email" id="email"
-                placeholder="Enter your Email" autocomplete="off" required onkeyup="validateemail()"><span id="email-error"></span></div>
-        <label for="message">Enter your Message or Feedback:<textarea name="Messages" id="message" cols="15" rows="10"
-                placeholder="Enter your Message or Comment"></textarea></label>
+        <div class="fullname">Name<em>*</em> : <input type="text" name="Full-name" id="fullname"
+                placeholder="Full Name" autocomplete="off" required onkeyup="validatename()"><span id="name-error"></span></div>
+        <div class="mobileNumber">Number<em>*</em> : <input type="number" name="Mobile-number"
+                id="mobilenumber" autocomplete="off" placeholder="Phone Number" required onkeyup="validatenumber()"><span id="number-error"></span></div>
+        <div class="email">e-Mail <em>*</em> : <input type="email" name="Email" id="email"
+                placeholder="E-mail" autocomplete="off" required onkeyup="validateemail()"><span id="email-error"></span></div>
+        <label for="message">Messages & Feedback:<textarea name="Messages" id="message" cols="15" rows="10"
+                placeholder="Message and Comment"></textarea></label>
         <button type="submit" id="button" onclick="return validatebutton()">Submit</button><p id="button-error"></p>
         <span id="msg"></span>
     </form>

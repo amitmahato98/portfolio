@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+form{
+    text-align: center;
+    height: max-content;
+    width: 30vw;
+    padding: 1rem;
+    background-color: #e29578;
+}
+.countrycurrency{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.amount,.countrycurrency,.outputamount,.msg,button{
+    margin: 1rem;
+}
+input{
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+}
+select{
+    cursor: pointer;
+    border: none;
+}
+button{
+    text-align: center;
+    background-color: #bb3e03;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+
+}
+.tocurrency,.fromcurrency{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.countrycurrency img{
+    width: 3rem;
+}
+#outputamount{
+    background-color: #fff;
+}
