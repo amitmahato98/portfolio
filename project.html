@@ -1,162 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link rel="stylesheet" href="project-style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Realistic Calculator</title>
+<style>
+  body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .calculator {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+  .display {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Digital', monospace;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: right;
+    font-size: 2em;
+  }
+  .button {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 50%;
+    margin: 5px;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    color: #333;
+    box-shadow: inset 0 4px rgba(0, 0, 0, 0.2);
+    outline: none;
+  }
+  .button:active {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
+  }
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+</style>
 </head>
-
 <body>
-    <header>
-        <nav>
-            <div class="logo"><a href="index.html"><img src="img/logo.jpg" alt=""></a></div>
-            <div class="menu" id="toggle">
-                <i class='bx bx-menu'></i>
-            </div>
-            <ul id="nav-menu" class="nav-menu">
-                <a href="index.html">
-                    <li>HOME</li>
-                </a>
-                <a href="#miniprojects">
-                    <li>MINI-PROJECTS</li>
-                </a>
-                <a href="#largeproject">
-                    <li>LARGE-PROJECTS</li>
-                </a>
-                <a href="#links">
-                    <li>LINKS</li>
-                </a>
-            </ul>
-        </nav>
-    </header>
-    <div class="mode" id="mode-icon" onclick="drakBrightmode()">
-     <img src="img/darkmode.png" id="mode-img">
-    </div>
-    <main>
-        <section  class="heading1">
-            <h1 id="miniprojects">Mini-Projects</h1>
-        </section>
-        <div class="miniproject">
-            <div class="calculator card">
-                <a href="Projects/calculator1.html">
-                    <div class="img"><img src="img/calculator.jpg"></div>
-                    <div class="desc">
-                        <h2>Calculator</h2>
-                        <p>In this project, there is a calculator made using html, and css only. You can perform arthmatic calculation. </p>
-                    </div>
-                </a>
-            </div>
+<div class="calculator">
+  <div id="display" class="display">0</div>
+  <div class="row">
+    <button class="button" onclick="appendNumber('7')">7</button>
+    <button class="button" onclick="appendNumber('8')">8</button>
+    <button class="button" onclick="appendNumber('9')">9</button>
+    <button class="button" onclick="setOperation('/')">/</button>
+  </div>
+  <div class="row">
+    <button class="button" onclick="appendNumber('4')">4</button>
+    <button class="button" onclick="appendNumber('5')">5</button>
+    <button class="button" onclick="appendNumber('6')">6</button>
+    <button class="button" onclick="setOperation('*')">*</button>
+  </div>
+  <div class="row">
+    <button class="button" onclick="appendNumber('1')">1</button>
+    <button class="button" onclick="appendNumber('2')">2</button>
+    <button class="button" onclick="appendNumber('3')">3</button>
+    <button class="button" onclick="setOperation('-')">-</button>
+  </div>
+  <div class="row">
+    <button class="button" onclick="appendNumber('0')">0</button>
+    <button class="button" onclick="appendNumber('.')">.</button>
+    <button class="button" onclick="calculate()">=</button>
+    <button class="button" onclick="setOperation('+')">+</button>
+  </div>
+  <div class="row">
+    <button class="button" onclick="clearDisplay()" style="width: 248px;">C</button>
+  </div>
+</div>
+<script>
+  // ... (JavaScript code remains the same as the previous example)
+  let currentOperation = '';
+  let previousOperand = '';
+  let currentOperand = '0';
+  const display = document.getElementById('display');
 
-            <!-- ------------projects---------- -->
-            <div class="lovecalculator card">
-                <a href="Projects/lovecalculator.html">
-                    <div class="img"><img src="img/lovecalculatorthumbnail.png"></div>
-                    <div class="desc">
-                        <h2>Love Calculator</h2>
-                        <p>In this project, there is a calculator made using html, css and javascript only. You can check the love of your loved ones. </p>
-                    </div>
-                </a>
-            </div>
+  function appendNumber(number) {
+    if (currentOperand === '0' && number !== '.') {
+      currentOperand = number;
+    } else {
+      currentOperand += number;
+    }
+    updateDisplay();
+  }
 
-            <!-- ------------projects---------- -->
-            <div class="reversestring card">
-                <a href="../Projects/clock/tictactoe.html">
-                    <div class="img"><img src="../img/tictactoethumbnail.jpg"></div>
-                    <div class="desc">
-                        <h2>Ai tictactoe</h2>
-                        <p>In this project, tIn this project, there is a Tic-Tac-Toe game playing against ai,. You can enjoy the game.</p>
-                    </div>
-                </a>
-            </div>
+  function setOperation(operation) {
+    if (currentOperand === '') return;
+    if (previousOperand !== '') {
+      calculate();
+    }
+    currentOperation = operation;
+    previousOperand = currentOperand;
+    currentOperand = '';
+  }
 
-            <!-- ------------projects---------- -->
-            <div class="tictactoe card">
-                <a href="Projects/tic-tac-toe.html">
-                    <div class="img"><img src="img/tictactoethumbnail.jpg"></div>
-                    <div class="desc">
-                        <h2>Tic-Tac-Toe</h2>
-                        <p>In this project, there is a Tic-Tac-Toe game made using html, and css only. You can enjoy the game, Try this. </p>
-                    </div>
-                </a>
-            </div>
+  function calculate() {
+    let computation;
+    const prev = parseFloat(previousOperand);
+    const current = parseFloat(currentOperand);
+    if (isNaN(prev) || isNaN(current)) return;
+    switch (currentOperation) {
+      case '+':
+        computation = prev + current;
+        break;
+      case '-':
+        computation = prev - current;
+        break;
+      case '*':
+        computation = prev * current;
+        break;
+      case '/':
+        computation = prev / current;
+        break;
+      default:
+        return;
+    }
+    currentOperand = computation.toString();
+    currentOperation = undefined;
+    previousOperand = '';
+    updateDisplay();
+  }
 
-            <!-- ------------projects---------- -->
-            <div class="colordemonstrate card">
-                <a href="Projects/event.html" >
-                    <div class="img"><img src="img/demonstrationofcolorthumbnail.jpg"></div>
-                    <div class="desc">
-                        <h2>Colors</h2>
-                        <p>There is a project about different colors. This is a kind of demenostration of color by clicking on the color name.</p>
-                    </div>
-                </a>
-            </div>
+  function clearDisplay() {
+    currentOperand = '0';
+    previousOperand = '';
+    currentOperation = undefined;
+    updateDisplay();
+  }
 
-            <!-- ------------projects---------- -->
-            <div class="faq card">
-                <a href="mausam.html">
-                    <div class="img"><img src="img/weather.png"></div>
-                    <div class="desc">
-                        <h2>FAQ</h2>
-                        <p>This is a FAQ section. if you are developer then you must used this project this will interact with questions and answers.</p>
-                    </div>
-                </a>
-            </div>
+  function updateDisplay() {
+    display.innerText = currentOperand;
+  }
 
-        </div>
+  // Keyboard support
+  document.addEventListener('keydown', (event) => {
+    if (event.key >= '0' && event.key <= '9' || event.key === '.') {
+      appendNumber(event.key);
+    }
+    switch (event.key) {
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+        setOperation(event.key);
+        break;
+      case 'Enter':
+      case '=':
+        calculate();
+        break;
+      case 'Backspace':
+        clearDisplay();
+        break;
+    }
+  });
 
-        <section class="largeproject">
-            <div class="heading2" id="largeproject"><h1>Large-Projects</h1></div>
-            <div class="l-projects">
-                <div class="l-project1">
-                    <h2>COMMING SOON</h2>
-                    <span class="circle"><em class="dot"></em><em class="dot"></em><em class="dot"></em><em class="dot"></em></span>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="copyr">
-            <h4>© Copyright Amit Mahato. All Rights Reserved 2024</h4>
-        </div>
-        <div class="links">
-            <a href="https://www.facebook.com/profile.php?id=100054970543276"><img src="img/fb.png"></a>
-            <a href="https://www.instagram.com/amisin05?igsh=MTNleGc0cncxY3F3MQ==" ><img src="img/instagram.png"></a>
-            <a href="https://github.com/amitmahato98" class="github"><img src="img/github.png" ></a>
-        </div>
-        <div id="links">
-            <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
-        </div>
-    </footer>
-
-
-
-    <script>
-        // nav bar
-        const togglebutton = document.getElementById('toggle');
-        let navmenu = document.getElementById('nav-menu')
-        togglebutton.addEventListener('click', () => {
-            navmenu.classList.toggle('active');
-        })
-        // mode-icon
-        var modeicon = document.getElementById('mode-icon');
-        var modeimg = document.getElementById('mode-img');
-        // function drakBrightmode(){
-        //     document.body.classList.toggle('darkmode');
-        // }
-        modeicon.onclick = function(){
-            document.body.classList.toggle('darkmode');
-            if( document.body.classList.contains('darkmode')){
-                modeimg.src = 'img/brightmode.png'
-            }else{
-                modeimg.src = 'img/darkmode.png'
-
-            }
-        }
-    </script>
+  updateDisplay();
+</script>
 </body>
-
 </html>
