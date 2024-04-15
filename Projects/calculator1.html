@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Calculator</title>
+<style>
+  .calculator {
+    width: 300px;
+    margin: auto;
+  }
+  .display {
+    width: 100%;
+    height: 50px;
+    background: #f2f2f2;
+    text-align: right;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  .button {
+    width: 25%;
+    height: 50px;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #eaeaea;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+  }
+  .button:hover {
+    background: #ddd;
+  }
+  .clear {
+    width: 100%;
+    background: #ff6666;
+  }
+</style>
+</head>
+<body>
+<div class="calculator">
+  <div id="display" class="display">0</div>
+  <div class="button" onclick="appendNumber('7')">7</div>
+  <div class="button" onclick="appendNumber('8')">8</div>
+  <div class="button" onclick="appendNumber('9')">9</div>
+  <div class="button" onclick="setOperation('+')">+</div>
+  <div class="button" onclick="appendNumber('4')">4</div>
+  <div class="button" onclick="appendNumber('5')">5</div>
+  <div class="button" onclick="appendNumber('6')">6</div>
+  <div class="button" onclick="setOperation('-')">-</div>
+  <div class="button" onclick="appendNumber('1')">1</div>
+  <div class="button" onclick="appendNumber('2')">2</div>
+  <div class="button" onclick="appendNumber('3')">3</div>
+  <div class="button" onclick="setOperation('*')">*</div>
+  <div class="button" onclick="appendNumber('0')">0</div>
+  <div class="button" onclick="appendNumber('.')">.</div>
+  <div class="button" onclick="calculate()">=</div>
+  <div class="button" onclick="setOperation('/')">/</div>
+  <div class="clear" onclick="clearDisplay()">C</div>
+</div>
+<script>
+  let currentOperation = '';
+  let previousOperand = '';
+  let currentOperand = '0';
+  const display = document.getElementById('display');
+
+  function appendNumber(number) {
+    if (currentOperand === '0' && number !== '.') {
+      currentOperand = number;
+    } else {
+      currentOperand += number;
+    }
+    updateDisplay();
+  }
+
+  function setOperation(operation) {
+    if (currentOperand === '') return;
+    if (previousOperand !== '') {
+      calculate();
+    }
+    currentOperation = operation;
+    previousOperand = currentOperand;
+    currentOperand = '';
+  }
+
+  function calculate() {
+    let computation;
+    const prev = parseFloat(previousOperand);
+    const current = parseFloat(currentOperand);
+    if (isNaN(prev) || isNaN(current)) return;
+    switch (currentOperation) {
+      case '+':
+        computation = prev + current;
+        break;
+      case '-':
+        computation = prev - current;
+        break;
+      case '*':
+        computation = prev * current;
+        break;
+      case '/':
+        computation = prev / current;
+        break;
+      default:
+        return;
+    }
+    currentOperand = computation.toString();
+    currentOperation = undefined;
+    previousOperand = '';
+    updateDisplay();
+  }
+
+  function clearDisplay() {
+    currentOperand = '0';
+    previousOperand = '';
+    currentOperation = undefined;
+    updateDisplay();
+  }
+
+  function updateDisplay() {
+    display.innerText = currentOperand;
+  }
+
+  // Keyboard support
+  document.addEventListener('keydown', (event) => {
+    if (event.key >= '0' && event.key <= '9' || event.key === '.') {
+      appendNumber(event.key);
+    }
+    switch (event.key) {
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+        setOperation(event.key);
+        break;
+      case 'Enter':
+      case '=':
+        calculate();
+        break;
+      case 'Backspace':
+        clearDisplay();
+        break;
+    }
+  });
+
+  updateDisplay();
+</script>
+</body>
+</html>
